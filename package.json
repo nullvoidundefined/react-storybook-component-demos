@@ -1,8 +1,21 @@
 {
   "name": "react-storybook-component-demos",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
+  "main": "dist/acme.cjs",
+  "module": "dist/acme.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/acme.js",
+      "require": "./dist/acme.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -b && vite build",
     "build-storybook": "storybook build",
@@ -12,11 +25,13 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "@chromatic-com/storybook": "^5.0.1",
     "@eslint/js": "^9.39.1",
     "@storybook/addon-a11y": "^10.2.14",
