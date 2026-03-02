@@ -12,7 +12,7 @@ export interface ButtonProps
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Unique id for the button element */
-  id: string;
+  id?: string;
 }
 
 /** Primary UI component for user interaction */
