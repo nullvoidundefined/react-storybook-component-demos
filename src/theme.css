@@ -1,0 +1,49 @@
+/* Design tokens: color system */
+:root {
+  /* Brand / primary */
+  --color-primary: #555ab9;
+  --color-primary-soft: #646cff;
+  --color-primary-soft-hover: #535bf2;
+
+  /* Semantic status */
+  --color-warn: #f5a623;
+  --color-warn-soft: #fff3cd;
+
+  --color-error: #d0021b;
+  --color-error-soft: #fde2e4;
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f5f5f7;
+  --color-surface-elevated: #ffffff;
+
+  /* Text */
+  --color-text: #213547;
+  --color-text-muted: #495057;
+  --color-text-strong: #333333;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-warn: #ffffff;
+  --color-text-on-error: #ffffff;
+
+  /* Borders */
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.16);
+
+  /* Focus */
+  --color-focus-ring: #646cff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: #242424;
+    --color-surface-subtle: #1a1a1a;
+    --color-surface-elevated: #2b2b2b;
+
+    --color-text: rgba(255, 255, 255, 0.92);
+    --color-text-muted: rgba(255, 255, 255, 0.7);
+
+    --color-border-subtle: rgba(255, 255, 255, 0.12);
+    --color-border-strong: rgba(255, 255, 255, 0.24);
+  }
+}
+

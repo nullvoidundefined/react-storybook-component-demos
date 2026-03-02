@@ -3,6 +3,8 @@ import "./button.css";
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
+  /** Visual variant of the button */
+  variant?: "primary" | "secondary" | "warn" | "danger";
   /** What background color to use */
   backgroundColor?: string;
   /** How large should the button be? */
@@ -16,14 +18,15 @@ export interface ButtonProps {
 /** Primary UI component for user interaction */
 export const Button = ({
   primary = false,
+  variant,
   size = "medium",
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  const resolvedVariant = variant ?? (primary ? "primary" : "secondary");
+  const mode = `storybook-button--${resolvedVariant}`;
+
   return (
     <button
       type="button"
