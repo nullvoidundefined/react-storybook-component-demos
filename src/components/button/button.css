@@ -1,4 +1,4 @@
-.storybook-button {
+.acme-button {
   border-radius: var(--border-radius-pill);
   border: 0;
   cursor: pointer;
@@ -7,46 +7,46 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading-tight);
 }
-.storybook-button--primary {
+.acme-button--primary {
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
 }
-.storybook-button--secondary {
+.acme-button--secondary {
   box-shadow: var(--shadow-border-inset-subtle);
   background-color: transparent;
   color: var(--color-text-strong);
 }
-.storybook-button--warn {
+.acme-button--warn {
   background-color: var(--color-warn);
   color: var(--color-text-on-warn);
 }
-.storybook-button--danger {
+.acme-button--danger {
   background-color: var(--color-error);
   color: var(--color-text-on-error);
 }
-.storybook-button--small {
+.acme-button--small {
   padding: 10px 16px;
   font-size: var(--font-size-button-sm);
 }
-.storybook-button--medium {
+.acme-button--medium {
   padding: 11px 20px;
   font-size: var(--font-size-button-md);
 }
-.storybook-button--large {
+.acme-button--large {
   padding: 12px 24px;
   font-size: var(--font-size-button-lg);
 }
 
 /* Focus ring for keyboard users (visible only on :focus-visible) */
-.storybook-button:focus {
+.acme-button:focus {
   outline: none;
 }
-.storybook-button:focus-visible {
+.acme-button:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
 }
-.storybook-button:disabled,
-.storybook-button[aria-disabled="true"] {
+.acme-button:disabled,
+.acme-button[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.7;
 }

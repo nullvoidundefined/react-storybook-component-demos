@@ -22,7 +22,7 @@ export const Header = ({
   onCreateAccount,
 }: HeaderProps) => (
   <header id={id}>
-      <div className="storybook-header">
+      <div className="acme-header">
       <div>
         <svg
           width="32"

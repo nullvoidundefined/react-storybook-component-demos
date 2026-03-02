@@ -16,7 +16,7 @@ export const Page: React.FC<PageProps> = ({ id }) => {
 
   return (
     <article id={id}>
-      <a href="#main-content" className="storybook-skip-link">
+      <a href="#main-content" className="acme-skip-link">
         Skip to main content
       </a>
       <Header
@@ -27,7 +27,7 @@ export const Page: React.FC<PageProps> = ({ id }) => {
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
       />
 
-      <section className="storybook-page" id="main-content" aria-label="Main content">
+      <section className="acme-page" id="main-content" aria-label="Main content">
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{" "}

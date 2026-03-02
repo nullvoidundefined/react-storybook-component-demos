@@ -35,10 +35,10 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const resolvedVariant = variant ?? (primary ? "primary" : "secondary");
-  const mode = `storybook-button--${resolvedVariant}`;
+  const mode = `acme-button--${resolvedVariant}`;
   const classNames = [
-    "storybook-button",
-    `storybook-button--${size}`,
+    "acme-button",
+    `acme-button--${size}`,
     mode,
     className,
   ]

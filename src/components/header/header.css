@@ -1,4 +1,4 @@
-.storybook-header {
+.acme-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,12 +9,12 @@
   font-family: var(--font-family-brand);
 }
 
-.storybook-header svg {
+.acme-header svg {
   display: inline-block;
   vertical-align: top;
 }
 
-.storybook-header h1 {
+.acme-header h1 {
   display: inline-block;
   vertical-align: top;
   margin: 6px 0 6px 10px;
@@ -23,11 +23,11 @@
   line-height: var(--line-height-heading-tight);
 }
 
-.storybook-header button + button {
+.acme-header button + button {
   margin-left: 10px;
 }
 
-.storybook-header .welcome {
+.acme-header .welcome {
   margin-right: 10px;
   color: var(--color-text-muted);
   font-size: var(--font-size-body);
