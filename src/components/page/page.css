@@ -1,8 +1,26 @@
+/* Skip link: visible only when focused (keyboard/screen reader) */
+.storybook-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-weight: var(--font-weight-bold);
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.storybook-skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
 .storybook-page {
   margin: 0 auto;
   padding: 48px 20px;
   max-width: 600px;
-  color: #333;
+  color: var(--color-text);
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   font-family: var(--font-family-brand);
@@ -39,9 +57,9 @@
   vertical-align: top;
   margin-right: 10px;
   border-radius: var(--border-radius-md);
-  background: #e7fdd8;
+  background: var(--color-tip-bg);
   padding: 4px 12px;
-  color: #357a14;
+  color: var(--color-tip-text);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-label-xs);
   line-height: var(--line-height-label-xs);
@@ -64,5 +82,5 @@
 }
 
 .storybook-page .tip-wrapper svg path {
-  fill: #1ea7fd;
+  fill: var(--color-accent-info);
 }

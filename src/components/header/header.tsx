@@ -6,6 +6,8 @@ type User = {
 };
 
 export interface HeaderProps {
+  /** Id for the top-level header element */
+  id: string;
   user?: User;
   onLogin?: () => void;
   onLogout?: () => void;
@@ -13,19 +15,21 @@ export interface HeaderProps {
 }
 
 export const Header = ({
+  id,
   user,
   onLogin,
   onLogout,
   onCreateAccount,
 }: HeaderProps) => (
-  <header>
-    <div className="storybook-header">
+  <header id={id}>
+      <div className="storybook-header">
       <div>
         <svg
           width="32"
           height="32"
           viewBox="0 0 32 32"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
         >
           <g fill="none" fillRule="evenodd">
             <path
@@ -48,14 +52,25 @@ export const Header = ({
         {user ? (
           <>
             <span className="welcome">
-              Welcome, <b>{user.name}</b>!
+              Welcome, <strong>{user.name}</strong>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button
+              id="application-header-logout"
+              size="small"
+              onClick={onLogout}
+              label="Log out"
+            />
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
             <Button
+              id="application-header-login"
+              size="small"
+              onClick={onLogin}
+              label="Log in"
+            />
+            <Button
+              id="application-header-signup"
               primary
               size="small"
               onClick={onCreateAccount}

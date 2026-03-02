@@ -1,6 +1,8 @@
+import type React from "react";
 import "./button.css";
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
   /** Visual variant of the button */
@@ -13,6 +15,10 @@ export interface ButtonProps {
   label: string;
   /** Optional click handler */
   onClick?: () => void;
+  /** Whether the button is disabled */
+  disabled?: boolean;
+  /** Unique id for the button element */
+  id: string;
 }
 
 /** Primary UI component for user interaction */
@@ -22,18 +28,30 @@ export const Button = ({
   size = "medium",
   backgroundColor,
   label,
+  disabled = false,
+  type = "button",
+  className,
+  id,
   ...props
 }: ButtonProps) => {
   const resolvedVariant = variant ?? (primary ? "primary" : "secondary");
   const mode = `storybook-button--${resolvedVariant}`;
+  const classNames = [
+    "storybook-button",
+    `storybook-button--${size}`,
+    mode,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " ",
-      )}
+      id={id}
+      type={type}
+      className={classNames}
       style={{ backgroundColor }}
+      disabled={disabled}
       {...props}
     >
       {label}

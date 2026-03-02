@@ -6,19 +6,28 @@ type User = {
   name: string;
 };
 
-export const Page: React.FC = () => {
+export interface PageProps {
+  /** Id for the top-level article element */
+  id: string;
+}
+
+export const Page: React.FC<PageProps> = ({ id }) => {
   const [user, setUser] = useState<User>();
 
   return (
-    <article>
+    <article id={id}>
+      <a href="#main-content" className="storybook-skip-link">
+        Skip to main content
+      </a>
       <Header
+        id="application-header"
         user={user}
         onLogin={() => setUser({ name: "Jane Doe" })}
         onLogout={() => setUser(undefined)}
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
       />
 
-      <section className="storybook-page">
+      <section className="storybook-page" id="main-content" aria-label="Main content">
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{" "}
@@ -26,6 +35,7 @@ export const Page: React.FC = () => {
             href="https://componentdriven.org"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Component-driven development (opens in new window)"
           >
             <strong>component-driven</strong>
           </a>{" "}
@@ -52,6 +62,7 @@ export const Page: React.FC = () => {
             href="https://storybook.js.org/tutorials/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Storybook tutorials (opens in new window)"
           >
             Storybook tutorials
           </a>
@@ -60,6 +71,7 @@ export const Page: React.FC = () => {
             href="https://storybook.js.org/docs"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Storybook docs (opens in new window)"
           >
             docs
           </a>
@@ -73,6 +85,7 @@ export const Page: React.FC = () => {
             height="10"
             viewBox="0 0 12 12"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
           >
             <g fill="none" fillRule="evenodd">
               <path

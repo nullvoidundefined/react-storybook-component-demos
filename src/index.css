@@ -56,9 +56,13 @@ button {
 button:hover {
   border-color: var(--color-primary-soft);
 }
-button:focus,
+/* Focus ring only for keyboard (avoid mouse focus outline) */
+button:focus {
+  outline: none;
+}
 button:focus-visible {
-  outline: 4px auto var(--color-focus-ring);
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -73,3 +77,13 @@ button:focus-visible {
     background-color: var(--color-surface-subtle);
   }
 }
+
+/* Explicit theme override for color-scheme (used in Storybook) */
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+

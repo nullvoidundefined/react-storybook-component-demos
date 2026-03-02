@@ -32,6 +32,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
+    id: "application-button-primary",
     variant: "primary",
     label: "Button",
   },
@@ -39,6 +40,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
+    id: "application-button-secondary",
     variant: "secondary",
     label: "Button",
   },
@@ -46,6 +48,7 @@ export const Secondary: Story = {
 
 export const Warn: Story = {
   args: {
+    id: "application-button-warn",
     variant: "warn",
     label: "Warn Button",
   },
@@ -53,6 +56,7 @@ export const Warn: Story = {
 
 export const Danger: Story = {
   args: {
+    id: "application-button-danger",
     variant: "danger",
     label: "Danger Button",
   },
@@ -60,6 +64,7 @@ export const Danger: Story = {
 
 export const Large: Story = {
   args: {
+    id: "application-button-large",
     size: "large",
     label: "Button",
   },
@@ -67,7 +72,17 @@ export const Large: Story = {
 
 export const Small: Story = {
   args: {
+    id: "application-button-small",
     size: "small",
     label: "Button",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    id: "application-button-disabled",
+    variant: "primary",
+    label: "Disabled",
+    disabled: true,
   },
 };

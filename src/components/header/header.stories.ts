@@ -14,6 +14,7 @@ const meta = {
     layout: 'fullscreen',
   },
   args: {
+    id: 'application-header',
     onLogin: fn(),
     onLogout: fn(),
     onCreateAccount: fn(),
