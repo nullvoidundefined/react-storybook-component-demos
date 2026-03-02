@@ -1,11 +1,11 @@
-import type { Preview } from '@storybook/react-vite'
+import type { Decorator, Preview } from '@storybook/react-vite'
 import '../src/styles/colors.css'
 import '../src/styles/fonts.css'
 import '../src/styles/borders.css'
 import '../src/styles/effects.css'
 import '../src/styles/storybook.css'
 
-const withTheme = (Story, context) => {
+const withTheme: Decorator = (Story, context) => {
   const theme = context.globals.theme
   const root = document.documentElement
 
