@@ -19,7 +19,7 @@
   "scripts": {
     "build": "tsc -b && vite build",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes",
+    "chromatic": "chromatic",
     "dev": "vite",
     "lint": "eslint .",
     "preview": "vite preview",
