@@ -3,8 +3,6 @@ import "./button.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
   /** Visual variant of the button */
   variant?: "primary" | "secondary" | "warn" | "danger";
   /** What background color to use */
@@ -19,8 +17,7 @@ export interface ButtonProps
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  primary = false,
-  variant,
+  variant = "secondary",
   size = "medium",
   backgroundColor,
   children,
@@ -30,7 +27,7 @@ export const Button = ({
   id,
   ...props
 }: ButtonProps) => {
-  const resolvedVariant = variant ?? (primary ? "primary" : "secondary");
+  const resolvedVariant = variant;
   const classNames = [
     "acme-button",
     `acme-button--${size}`,

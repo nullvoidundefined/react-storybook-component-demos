@@ -73,7 +73,7 @@ export const Header = ({
             </Button>
             <Button
               id="application-header-signup"
-              primary
+              variant="primary"
               size="small"
               onClick={onCreateAccount}
             >
