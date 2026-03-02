@@ -6,6 +6,8 @@
 
 body {
   margin: 0;
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
 
 /* In docs pages, force components to use the light theme,
