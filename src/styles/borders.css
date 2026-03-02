@@ -1,0 +1,12 @@
+/* Design tokens: border system */
+:root {
+  /* Radii */
+  --border-radius-sm: 0.5rem; /* small elements, e.g. standard buttons */
+  --border-radius-md: 1rem; /* chips, tips */
+  --border-radius-pill: 9999px; /* fully rounded pill buttons */
+
+  /* Widths */
+  --border-width-hairline: 1px;
+  --border-width-regular: 1px;
+}
+

@@ -1,0 +1,32 @@
+/* Design tokens: typography system */
+:root {
+  /* Font families */
+  --font-family-sans: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-brand: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Font sizes (use rem for accessibility & scaling) */
+  --font-size-heading-xl: 3.2rem; /* app main heading */
+  --font-size-heading-lg: 2rem; /* page h2 */
+  --font-size-heading-md: 1.25rem; /* header title */
+  --font-size-body: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-label-xs: 0.75rem;
+
+  /* Button font sizes */
+  --font-size-button-sm: 0.875rem;
+  --font-size-button-md: 1rem;
+  --font-size-button-lg: 1.125rem;
+
+  /* Line heights */
+  --line-height-root: 1.5;
+  --line-height-heading-tight: 1;
+  --line-height-body: 24px;
+  --line-height-body-sm: 20px;
+  --line-height-label-xs: 12px;
+}
+

@@ -1,0 +1,14 @@
+/* Design tokens: effects (shadows, filters, transitions) */
+:root {
+  /* Shadows */
+  --shadow-border-inset-subtle: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+  /* Logo glows */
+  --shadow-logo-vite: drop-shadow(0 0 2em #646cffaa);
+  --shadow-logo-react: drop-shadow(0 0 2em #61dafbaa);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-medium: 300ms ease;
+}
+
