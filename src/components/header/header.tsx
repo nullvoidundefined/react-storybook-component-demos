@@ -58,8 +58,9 @@ export const Header = ({
               id="application-header-logout"
               size="small"
               onClick={onLogout}
-              label="Log out"
-            />
+            >
+              Log out
+            </Button>
           </>
         ) : (
           <>
@@ -67,15 +68,17 @@ export const Header = ({
               id="application-header-login"
               size="small"
               onClick={onLogin}
-              label="Log in"
-            />
+            >
+              Log in
+            </Button>
             <Button
               id="application-header-signup"
               primary
               size="small"
               onClick={onCreateAccount}
-              label="Sign up"
-            />
+            >
+              Sign up
+            </Button>
           </>
         )}
       </div>

@@ -2,7 +2,7 @@ import type React from "react";
 import "./button.css";
 
 export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
   /** Visual variant of the button */
@@ -11,10 +11,6 @@ export interface ButtonProps
   backgroundColor?: string;
   /** How large should the button be? */
   size?: "small" | "medium" | "large";
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Unique id for the button element */
@@ -27,7 +23,7 @@ export const Button = ({
   variant,
   size = "medium",
   backgroundColor,
-  label,
+  children,
   disabled = false,
   type = "button",
   className,
@@ -35,11 +31,10 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const resolvedVariant = variant ?? (primary ? "primary" : "secondary");
-  const mode = `acme-button--${resolvedVariant}`;
   const classNames = [
     "acme-button",
     `acme-button--${size}`,
-    mode,
+    `acme-button--${resolvedVariant}`,
     className,
   ]
     .filter(Boolean)
@@ -54,7 +49,7 @@ export const Button = ({
       disabled={disabled}
       {...props}
     >
-      {label}
+      {children}
     </button>
   );
 };

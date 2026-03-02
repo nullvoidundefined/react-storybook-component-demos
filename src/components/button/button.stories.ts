@@ -34,7 +34,7 @@ export const Primary: Story = {
   args: {
     id: "application-button-primary",
     variant: "primary",
-    label: "Button",
+    children: "Button",
   },
 };
 
@@ -42,7 +42,7 @@ export const Secondary: Story = {
   args: {
     id: "application-button-secondary",
     variant: "secondary",
-    label: "Button",
+    children: "Button",
   },
 };
 
@@ -50,7 +50,7 @@ export const Warn: Story = {
   args: {
     id: "application-button-warn",
     variant: "warn",
-    label: "Warn Button",
+    children: "Warn Button",
   },
 };
 
@@ -58,7 +58,7 @@ export const Danger: Story = {
   args: {
     id: "application-button-danger",
     variant: "danger",
-    label: "Danger Button",
+    children: "Danger Button",
   },
 };
 
@@ -66,7 +66,7 @@ export const Large: Story = {
   args: {
     id: "application-button-large",
     size: "large",
-    label: "Button",
+    children: "Button",
   },
 };
 
@@ -74,7 +74,7 @@ export const Small: Story = {
   args: {
     id: "application-button-small",
     size: "small",
-    label: "Button",
+    children: "Button",
   },
 };
 
@@ -82,7 +82,7 @@ export const Disabled: Story = {
   args: {
     id: "application-button-disabled",
     variant: "primary",
-    label: "Disabled",
+    children: "Disabled",
     disabled: true,
   },
 };
