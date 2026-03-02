@@ -14,6 +14,11 @@
   vertical-align: top;
 }
 
+/* Logo path fills use design tokens instead of hardcoded hex values */
+.acme-logo__bg { fill: var(--color-surface); }
+.acme-logo__primary { fill: var(--color-primary); }
+.acme-logo__tint { fill: var(--color-primary-tint); }
+
 .acme-header h1 {
   display: inline-block;
   vertical-align: top;

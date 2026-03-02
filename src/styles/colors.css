@@ -2,6 +2,7 @@
 :root {
   /* Brand / primary */
   --color-primary: #555ab9;
+  --color-primary-tint: #91baf8;
   --color-primary-soft: #646cff;
   --color-primary-soft-hover: #535bf2;
 
