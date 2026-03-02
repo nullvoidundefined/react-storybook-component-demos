@@ -13,6 +13,8 @@ export interface ButtonProps
   disabled?: boolean;
   /** Unique id for the button element */
   id?: string;
+  /** Ref forwarded to the underlying button element (React 19 ref-as-prop) */
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 /** Primary UI component for user interaction */
@@ -25,6 +27,7 @@ export const Button = ({
   type = "button",
   className,
   id,
+  ref,
   ...props
 }: ButtonProps) => {
   const resolvedVariant = variant;
@@ -39,6 +42,7 @@ export const Button = ({
 
   return (
     <button
+      ref={ref}
       id={id}
       type={type}
       className={classNames}

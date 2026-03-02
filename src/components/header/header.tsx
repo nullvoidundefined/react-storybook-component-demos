@@ -1,3 +1,4 @@
+import type React from "react";
 import { Button } from "../button/button";
 import "./header.css";
 
@@ -12,6 +13,8 @@ export interface HeaderProps {
   onLogin?: () => void;
   onLogout?: () => void;
   onCreateAccount?: () => void;
+  /** Ref forwarded to the underlying header element (React 19 ref-as-prop) */
+  ref?: React.Ref<HTMLElement>;
 }
 
 export const Header = ({
@@ -20,8 +23,9 @@ export const Header = ({
   onLogin,
   onLogout,
   onCreateAccount,
+  ref,
 }: HeaderProps) => (
-  <header id={id}>
+  <header ref={ref} id={id}>
       <div className="acme-header">
       <div>
         <svg
