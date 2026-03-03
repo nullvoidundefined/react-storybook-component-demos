@@ -1,14 +1,13 @@
-import type React from "react";
-import "./button.css";
+import type React from 'react';
+import './button.css';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Visual variant of the button */
-  variant?: "primary" | "secondary" | "warn" | "danger";
+  variant?: 'primary' | 'secondary' | 'warn' | 'danger';
   /** What background color to use */
   backgroundColor?: string;
   /** How large should the button be? */
-  size?: "small" | "medium" | "large";
+  size?: 'small' | 'medium' | 'large';
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Unique id for the button element */
@@ -19,26 +18,27 @@ export interface ButtonProps
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  variant = "secondary",
-  size = "medium",
+  variant = 'secondary',
+  size = 'medium',
   backgroundColor,
   children,
   disabled = false,
-  type = "button",
+  type = 'button',
   className,
   id,
   ref,
+  style,
   ...props
 }: ButtonProps) => {
   const resolvedVariant = variant;
   const classNames = [
-    "acme-button",
+    'acme-button',
     `acme-button--${size}`,
     `acme-button--${resolvedVariant}`,
     className,
   ]
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 
   return (
     <button
@@ -46,7 +46,7 @@ export const Button = ({
       id={id}
       type={type}
       className={classNames}
-      style={{ backgroundColor }}
+      style={{ backgroundColor, ...style }}
       disabled={disabled}
       {...props}
     >

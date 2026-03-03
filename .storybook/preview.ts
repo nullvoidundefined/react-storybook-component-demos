@@ -1,22 +1,22 @@
-import type { Decorator, Preview } from '@storybook/react-vite'
-import '../src/styles/colors.css'
-import '../src/styles/fonts.css'
-import '../src/styles/borders.css'
-import '../src/styles/effects.css'
-import '../src/styles/storybook.css'
+import type { Decorator, Preview } from '@storybook/react-vite';
+import '../src/styles/colors.css';
+import '../src/styles/fonts.css';
+import '../src/styles/borders.css';
+import '../src/styles/effects.css';
+import '../src/styles/storybook.css';
 
 const withTheme: Decorator = (Story, context) => {
-  const theme = context.globals.theme
-  const root = document.documentElement
+  const theme = context.globals.theme;
+  const root = document.documentElement;
 
-  root.removeAttribute('data-theme')
+  root.removeAttribute('data-theme');
 
   if (theme === 'light' || theme === 'dark') {
-    root.setAttribute('data-theme', theme)
+    root.setAttribute('data-theme', theme);
   }
 
-  return Story()
-}
+  return Story();
+};
 
 const preview: Preview = {
   globalTypes: {
@@ -50,6 +50,6 @@ const preview: Preview = {
       test: 'error',
     },
   },
-}
+};
 
 export default preview;
