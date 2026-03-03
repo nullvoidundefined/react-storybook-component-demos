@@ -1,6 +1,6 @@
-import type React from "react";
-import { Button } from "../button/button";
-import "./header.css";
+import type React from 'react';
+import { Button } from '../button/button';
+import './header.css';
 
 type User = {
   name: string;
@@ -17,16 +17,9 @@ export interface HeaderProps {
   ref?: React.Ref<HTMLElement>;
 }
 
-export const Header = ({
-  id,
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-  ref,
-}: HeaderProps) => (
+export const Header = ({ id, user, onLogin, onLogout, onCreateAccount, ref }: HeaderProps) => (
   <header ref={ref} id={id}>
-      <div className="acme-header">
+    <div className="acme-header">
       <div>
         <svg
           className="acme-logo"
@@ -59,21 +52,13 @@ export const Header = ({
             <span className="welcome">
               Welcome, <strong>{user.name}</strong>!
             </span>
-            <Button
-              id="application-header-logout"
-              size="small"
-              onClick={onLogout}
-            >
+            <Button id="application-header-logout" size="small" onClick={onLogout}>
               Log out
             </Button>
           </>
         ) : (
           <>
-            <Button
-              id="application-header-login"
-              size="small"
-              onClick={onLogin}
-            >
+            <Button id="application-header-login" size="small" onClick={onLogin}>
               Log in
             </Button>
             <Button

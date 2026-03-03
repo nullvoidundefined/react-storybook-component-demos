@@ -8,16 +8,16 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/acme.js",
-      "require": "./dist/acme.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/acme.cjs"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && tsc -p tsconfig.build.json",
     "build-storybook": "storybook build",
     "chromatic": "chromatic",
     "dev": "vite",
