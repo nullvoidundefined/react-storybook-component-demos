@@ -7,6 +7,14 @@
  */
 
 @mixin dark-colors {
+  /* Fruit palette (dark variants) */
+  --color-blueberry: #9aa3ff;
+  --color-tangerine: #ffb74a;
+  --color-cherry: #ff5c5c;
+  --color-grape: #b48cff;
+  --color-mango: #ffd166;
+  --color-raspberry: #ff7ba5;
+
   --color-surface: #242424;
   --color-surface-subtle: #1a1a1a;
   --color-surface-elevated: #2b2b2b;
@@ -23,18 +31,35 @@
   --color-border-strong: rgba(255, 255, 255, 0.24);
 }
 
+$fruit-colors: blueberry, tangerine, cherry, grape, mango, raspberry;
+
+@mixin bg-color($name) {
+  background-color: var(--color-#{$name});
+}
+
 :root {
+  /* Fruit palette */
+  --color-blueberry: #555ab9;
+  --color-tangerine: #f5a623;
+  --color-cherry: #d0021b;
+  --color-grape: #7b3fe4;
+  --color-mango: #ffb627;
+  --color-raspberry: #ff4f7b;
+
   /* Brand / primary */
-  --color-primary: #555ab9;
+  --color-primary-base: var(--color-blueberry);
+  --color-primary: var(--color-primary-base);
   --color-primary-tint: #91baf8;
   --color-primary-soft: #646cff;
   --color-primary-soft-hover: #535bf2;
 
   /* Semantic status */
-  --color-warn: #f5a623;
+  --color-warn-base: var(--color-tangerine);
+  --color-warn: var(--color-warn-base);
   --color-warn-soft: #fff3cd;
 
-  --color-error: #d0021b;
+  --color-danger-base: var(--color-cherry);
+  --color-error: var(--color-danger-base);
   --color-error-soft: #fde2e4;
 
   /* Surfaces */

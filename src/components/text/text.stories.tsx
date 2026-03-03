@@ -2,13 +2,13 @@ import type { ComponentType } from 'react';
 import type { Meta } from '@storybook/react-vite';
 
 import { Text } from './text';
-import { textClassNames, type TextClassName } from './text.types';
+import { textVariants, type TextVariant } from './text.types';
 
 const TextDemo = () => (
   <>
-    {textClassNames.map((textClassName: TextClassName) => (
-      <div key={textClassName}>
-        <Text textClassName={textClassName}>{textClassName}</Text>
+    {textVariants.map((textVariant: TextVariant) => (
+      <div key={textVariant}>
+        <Text variant={textVariant}>{textVariant}</Text>
         <div style={{ marginBottom: '8px' }} />
       </div>
     ))}
@@ -16,7 +16,7 @@ const TextDemo = () => (
 );
 
 const meta: Meta<typeof Text> = {
-  title: 'Acme/Text',
+  title: 'Components/Text',
   component: Text,
   decorators: [
     (Story: ComponentType) => (

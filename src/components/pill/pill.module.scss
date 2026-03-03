@@ -1,0 +1,35 @@
+@use '../../styles/colors' as *;
+
+.pill {
+  align-items: center;
+  background-color: var(--color-blueberry);
+  border-radius: 9999px;
+  color: var(--color-text-on-primary);
+  display: inline-flex;
+  width: fit-content;
+  font-family: var(--font-family-brand);
+  font-weight: var(--font-weight-medium);
+  justify-content: center;
+  line-height: var(--line-height-body-tight);
+
+  &.sm {
+    padding: 2px 8px;
+    font-size: var(--font-size-caption);
+  }
+
+  &.md {
+    padding: 4px 10px;
+    font-size: var(--font-size-body-sm);
+  }
+
+  &.lg {
+    padding: 6px 12px;
+    font-size: var(--font-size-body-md);
+  }
+
+  @each $color in $fruit-colors {
+    &.#{$color} {
+      @include bg-color($color);
+    }
+  }
+}

@@ -4,6 +4,7 @@ import '../src/styles/fonts.scss';
 import '../src/styles/borders.scss';
 import '../src/styles/effects.scss';
 import '../src/styles/storybook.scss';
+import '../src/index.scss';
 
 const withTheme: Decorator = (Story, context) => {
   const theme = context.globals.theme;

@@ -1,4 +1,4 @@
-export const textClassNames = [
+export const textVariants = [
   'header1',
   'header2',
   'header3',
@@ -19,4 +19,4 @@ export const textClassNames = [
   'subheader3',
 ] as const;
 
-export type TextClassName = (typeof textClassNames)[number];
+export type TextVariant = (typeof textVariants)[number];

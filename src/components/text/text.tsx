@@ -2,7 +2,7 @@ import type React from 'react';
 import clsx from 'clsx';
 
 import styles from './text.module.scss';
-import type { TextClassName } from './text.types';
+import type { TextVariant } from './text.types';
 
 export interface TextProps {
   as?: React.ElementType;
@@ -10,7 +10,7 @@ export interface TextProps {
   className?: string;
   id?: string;
   style?: React.CSSProperties;
-  textClassName: TextClassName;
+  variant: TextVariant;
   title?: string;
 }
 
@@ -21,10 +21,10 @@ export const Text = ({
   className,
   id,
   style,
-  textClassName,
+  variant,
   title,
 }: TextProps) => (
-  <Component className={clsx(styles[textClassName], className)} id={id} style={style} title={title}>
+  <Component className={clsx(styles[variant], className)} id={id} style={style} title={title}>
     {children}
   </Component>
 );
