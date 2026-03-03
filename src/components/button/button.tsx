@@ -1,5 +1,5 @@
 import type React from 'react';
-import './button.css';
+import styles from './button.module.scss';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Visual variant of the button */
@@ -30,13 +30,7 @@ export const Button = ({
   style,
   ...props
 }: ButtonProps) => {
-  const resolvedVariant = variant;
-  const classNames = [
-    'acme-button',
-    `acme-button--${size}`,
-    `acme-button--${resolvedVariant}`,
-    className,
-  ]
+  const classNames = [styles.button, styles[size], styles[variant], className]
     .filter(Boolean)
     .join(' ');
 

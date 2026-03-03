@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
-import './app.css';
+import styles from './app.module.scss';
 
 export interface AppProps {
   /** Id for the top-level app container */
@@ -20,7 +20,7 @@ function App({ id }: AppProps) {
           rel="noopener noreferrer"
           aria-label="Vite (opens in new window)"
         >
-          <img src={viteLogo} className="logo" alt="" />
+          <img src={viteLogo} className={styles.logo} alt="" />
         </a>
         <a
           href="https://react.dev"
@@ -28,11 +28,11 @@ function App({ id }: AppProps) {
           rel="noopener noreferrer"
           aria-label="React (opens in new window)"
         >
-          <img src={reactLogo} className="logo react" alt="" />
+          <img src={reactLogo} className={`${styles.logo} ${styles.react}`} alt="" />
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
+      <div className={styles.card}>
         <button
           type="button"
           onClick={() => setCount((count) => count + 1)}
@@ -44,7 +44,7 @@ function App({ id }: AppProps) {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <p className={styles.readTheDocs}>Click on the Vite and React logos to learn more</p>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 /* Skip link: visible only when focused (keyboard/screen reader) */
-.acme-skip-link {
+.skipLink {
   position: absolute;
   top: -100%;
   left: 0;
@@ -9,14 +9,15 @@
   font-weight: var(--font-weight-bold);
   z-index: 100;
   transition: top 0.2s ease;
-}
-.acme-skip-link:focus {
-  top: 0;
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 2px;
+
+  &:focus {
+    top: 0;
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
 }
 
-.acme-page {
+.page {
   margin: 0 auto;
   padding: 48px 20px;
   max-width: 600px;
@@ -25,35 +26,35 @@
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   font-family: var(--font-family-brand);
+
+  h2 {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 4px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-heading-lg);
+    line-height: var(--line-height-heading-tight);
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ul {
+    margin: 1em 0;
+    padding-left: 30px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
 }
 
-.acme-page h2 {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 0 4px;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-heading-lg);
-  line-height: var(--line-height-heading-tight);
-}
-
-.acme-page p {
-  margin: 1em 0;
-}
-
-.acme-page a {
-  color: inherit;
-}
-
-.acme-page ul {
-  margin: 1em 0;
-  padding-left: 30px;
-}
-
-.acme-page li {
-  margin-bottom: 8px;
-}
-
-.acme-page .tip {
+.tip {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
@@ -66,22 +67,22 @@
   line-height: var(--line-height-label-xs);
 }
 
-.acme-page .tip-wrapper {
+.tipWrapper {
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: var(--font-size-body-sm);
   line-height: var(--line-height-body-sm);
-}
 
-.acme-page .tip-wrapper svg {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 3px;
-  margin-right: 4px;
-  width: 12px;
-  height: 12px;
-}
+  svg {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3px;
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
 
-.acme-page .tip-wrapper svg path {
-  fill: var(--color-accent-info);
+    path {
+      fill: var(--color-accent-info);
+    }
+  }
 }

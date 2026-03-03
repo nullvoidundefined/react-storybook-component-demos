@@ -1,9 +1,9 @@
 import type { Decorator, Preview } from '@storybook/react-vite';
-import '../src/styles/colors.css';
-import '../src/styles/fonts.css';
-import '../src/styles/borders.css';
-import '../src/styles/effects.css';
-import '../src/styles/storybook.css';
+import '../src/styles/colors.scss';
+import '../src/styles/fonts.scss';
+import '../src/styles/borders.scss';
+import '../src/styles/effects.scss';
+import '../src/styles/storybook.scss';
 
 const withTheme: Decorator = (Story, context) => {
   const theme = context.globals.theme;

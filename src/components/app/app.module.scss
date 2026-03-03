@@ -10,12 +10,14 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter var(--transition-medium);
-}
-.logo:hover {
-  filter: var(--shadow-logo-vite);
-}
-.logo.react:hover {
-  filter: var(--shadow-logo-react);
+
+  &:hover {
+    filter: var(--shadow-logo-vite);
+  }
+
+  &.react:hover {
+    filter: var(--shadow-logo-react);
+  }
 }
 
 @keyframes logo-spin {
@@ -37,6 +39,6 @@
   padding: 2em;
 }
 
-.read-the-docs {
+.readTheDocs {
   color: var(--color-text-muted);
 }

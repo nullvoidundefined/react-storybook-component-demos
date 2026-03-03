@@ -1,0 +1,180 @@
+@use '../../styles/breakpoints' as *;
+
+// Headers
+
+.header1 {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-bold);
+  font-size: 2.5rem;
+  line-height: 110%;
+  letter-spacing: -0.4px;
+  color: var(--color-text);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 3rem;
+    letter-spacing: -0.6px;
+  }
+}
+
+.header2 {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-bold);
+  font-size: 2rem;
+  line-height: 110%;
+  color: var(--color-text);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 2.75rem;
+  }
+}
+
+.header3 {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  line-height: 120%;
+  color: var(--color-text);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 2rem;
+  }
+}
+
+// Body
+
+@mixin body-base {
+  font-family: var(--font-family-sans);
+  line-height: 150%;
+  color: var(--color-text);
+}
+
+@mixin body-1 {
+  @include body-base;
+  font-size: 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.125rem;
+  }
+}
+
+@mixin body-2 {
+  @include body-base;
+  font-size: 0.875rem;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1rem;
+  }
+}
+
+@mixin body-3 {
+  @include body-base;
+  font-size: 0.75rem;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 0.875rem;
+  }
+}
+
+.body1regular {
+  @include body-1;
+  font-weight: var(--font-weight-regular);
+}
+
+.body2regular {
+  @include body-2;
+  font-weight: var(--font-weight-regular);
+}
+
+.body3regular {
+  @include body-3;
+  font-weight: var(--font-weight-regular);
+}
+
+.body1medium {
+  @include body-1;
+  font-weight: var(--font-weight-medium);
+}
+
+.body2medium {
+  @include body-2;
+  font-weight: var(--font-weight-medium);
+}
+
+.body3medium {
+  @include body-3;
+  font-weight: var(--font-weight-medium);
+}
+
+.body1bold {
+  @include body-1;
+  font-weight: var(--font-weight-bold);
+}
+
+.body2bold {
+  @include body-2;
+  font-weight: var(--font-weight-bold);
+}
+
+.body3bold {
+  @include body-3;
+  font-weight: var(--font-weight-bold);
+}
+
+.body1link {
+  @include body-1;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.body2link {
+  @include body-2;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.body3link {
+  @include body-3;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+// Subheaders
+
+.subheader1 {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.5rem;
+  line-height: 120%;
+  color: var(--color-text);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.875rem;
+  }
+}
+
+.subheader2 {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.125rem;
+  line-height: 120%;
+  color: var(--color-text);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.5rem;
+  }
+}
+
+.subheader3 {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.875rem;
+  line-height: 120%;
+  color: var(--color-text);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1rem;
+  }
+}

@@ -1,5 +1,5 @@
 import { Header } from '../header/header';
-import './page.css';
+import styles from './page.module.scss';
 import { useState } from 'react';
 
 type User = {
@@ -16,7 +16,7 @@ export const Page: React.FC<PageProps> = ({ id }) => {
 
   return (
     <article id={id}>
-      <a href="#main-content" className="acme-skip-link">
+      <a href="#main-content" className={styles.skipLink}>
         Skip to main content
       </a>
       <Header
@@ -27,7 +27,7 @@ export const Page: React.FC<PageProps> = ({ id }) => {
         onCreateAccount={() => setUser({ name: 'Jane Doe' })}
       />
 
-      <section className="acme-page" id="main-content" aria-label="Main content">
+      <section className={styles.page} id="main-content" aria-label="Main content">
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{' '}
@@ -77,8 +77,8 @@ export const Page: React.FC<PageProps> = ({ id }) => {
           </a>
           .
         </p>
-        <div className="tip-wrapper">
-          <span className="tip">Tip</span> Adjust the width of the canvas with the{' '}
+        <div className={styles.tipWrapper}>
+          <span className={styles.tip}>Tip</span> Adjust the width of the canvas with the{' '}
           <svg
             width="10"
             height="10"

@@ -1,7 +1,7 @@
-@import './styles/colors.css';
-@import './styles/fonts.css';
-@import './styles/borders.css';
-@import './styles/effects.css';
+@use './styles/colors';
+@use './styles/fonts';
+@use './styles/borders';
+@use './styles/effects';
 
 :root {
   font-family: var(--font-family-sans);
@@ -22,9 +22,10 @@ a {
   font-weight: var(--font-weight-medium);
   color: var(--color-primary-soft);
   text-decoration: inherit;
-}
-a:hover {
-  color: var(--color-primary-soft-hover);
+
+  &:hover {
+    color: var(--color-primary-soft-hover);
+  }
 }
 
 body {
@@ -52,29 +53,19 @@ button {
   background-color: var(--color-surface-subtle);
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: var(--color-primary-soft);
-}
-/* Focus ring only for keyboard (avoid mouse focus outline) */
-button:focus {
-  outline: none;
-}
-button:focus-visible {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 2px;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--color-text);
-    background-color: var(--color-surface);
+  &:hover {
+    border-color: var(--color-primary-soft);
   }
-  a:hover {
-    color: var(--color-primary-soft-hover);
+
+  /* Focus ring only for keyboard (avoid mouse focus outline) */
+  &:focus {
+    outline: none;
   }
-  button {
-    background-color: var(--color-surface-subtle);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
   }
 }
 

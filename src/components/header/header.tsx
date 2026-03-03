@@ -1,6 +1,6 @@
 import type React from 'react';
 import { Button } from '../button/button';
-import './header.css';
+import styles from './header.module.scss';
 
 type User = {
   name: string;
@@ -19,10 +19,10 @@ export interface HeaderProps {
 
 export const Header = ({ id, user, onLogin, onLogout, onCreateAccount, ref }: HeaderProps) => (
   <header ref={ref} id={id}>
-    <div className="acme-header">
+    <div className={styles.header}>
       <div>
         <svg
-          className="acme-logo"
+          className={styles.logo}
           width="32"
           height="32"
           viewBox="0 0 32 32"
@@ -31,15 +31,15 @@ export const Header = ({ id, user, onLogin, onLogout, onCreateAccount, ref }: He
         >
           <g fill="none" fillRule="evenodd">
             <path
-              className="acme-logo__bg"
+              className={styles.logoBg}
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
             />
             <path
-              className="acme-logo__primary"
+              className={styles.logoPrimary}
               d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
             />
             <path
-              className="acme-logo__tint"
+              className={styles.logoTint}
               d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
             />
           </g>
@@ -49,7 +49,7 @@ export const Header = ({ id, user, onLogin, onLogout, onCreateAccount, ref }: He
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            <span className={styles.welcome}>
               Welcome, <strong>{user.name}</strong>!
             </span>
             <Button id="application-header-logout" size="small" onClick={onLogout}>
