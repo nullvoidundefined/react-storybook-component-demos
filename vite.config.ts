@@ -30,9 +30,6 @@ export default defineConfig({
       include: ['src/**/*.{ts,tsx}'],
       exclude: [
         'src/**/*.stories.{ts,tsx}',
-        'src/components/app/**',
-        'src/main.tsx',
-        'src/index.ts',
       ],
       thresholds: {
         lines: 80,

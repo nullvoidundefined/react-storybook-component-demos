@@ -20,7 +20,6 @@
     "build": "tsc -b && vite build && tsc -p tsconfig.build.json",
     "build-storybook": "storybook build",
     "chromatic": "chromatic",
-    "dev": "vite",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
