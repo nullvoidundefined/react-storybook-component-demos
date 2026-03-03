@@ -1,5 +1,6 @@
-import { Button } from "../button/button";
-import "./header.css";
+import type React from 'react';
+import { Button } from '../button/button';
+import './header.css';
 
 type User = {
   name: string;
@@ -12,19 +13,16 @@ export interface HeaderProps {
   onLogin?: () => void;
   onLogout?: () => void;
   onCreateAccount?: () => void;
+  /** Ref forwarded to the underlying header element (React 19 ref-as-prop) */
+  ref?: React.Ref<HTMLElement>;
 }
 
-export const Header = ({
-  id,
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
-  <header id={id}>
-      <div className="storybook-header">
+export const Header = ({ id, user, onLogin, onLogout, onCreateAccount, ref }: HeaderProps) => (
+  <header ref={ref} id={id}>
+    <div className="acme-header">
       <div>
         <svg
+          className="acme-logo"
           width="32"
           height="32"
           viewBox="0 0 32 32"
@@ -33,16 +31,16 @@ export const Header = ({
         >
           <g fill="none" fillRule="evenodd">
             <path
+              className="acme-logo__bg"
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
             />
             <path
+              className="acme-logo__primary"
               d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
             />
             <path
+              className="acme-logo__tint"
               d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
             />
           </g>
         </svg>
@@ -54,28 +52,23 @@ export const Header = ({
             <span className="welcome">
               Welcome, <strong>{user.name}</strong>!
             </span>
-            <Button
-              id="application-header-logout"
-              size="small"
-              onClick={onLogout}
-              label="Log out"
-            />
+            <Button id="application-header-logout" size="small" onClick={onLogout}>
+              Log out
+            </Button>
           </>
         ) : (
           <>
-            <Button
-              id="application-header-login"
-              size="small"
-              onClick={onLogin}
-              label="Log in"
-            />
+            <Button id="application-header-login" size="small" onClick={onLogin}>
+              Log in
+            </Button>
             <Button
               id="application-header-signup"
-              primary
+              variant="primary"
               size="small"
               onClick={onCreateAccount}
-              label="Sign up"
-            />
+            >
+              Sign up
+            </Button>
           </>
         )}
       </div>

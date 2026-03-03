@@ -1,7 +1,7 @@
-@import "./styles/colors.css";
-@import "./styles/fonts.css";
-@import "./styles/borders.css";
-@import "./styles/effects.css";
+@import './styles/colors.css';
+@import './styles/fonts.css';
+@import './styles/borders.css';
+@import './styles/effects.css';
 
 :root {
   font-family: var(--font-family-sans);
@@ -86,4 +86,3 @@ button:focus-visible {
 [data-theme='dark'] {
   color-scheme: dark;
 }
-

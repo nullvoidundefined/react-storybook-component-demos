@@ -1,18 +1,34 @@
 {
   "name": "react-storybook-component-demos",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
-  "scripts": {
-    "build": "tsc -b && vite build",
-    "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes",
-    "dev": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006"
+  "main": "dist/acme.cjs",
+  "module": "dist/acme.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/acme.js",
+      "require": "./dist/acme.cjs"
+    }
   },
-  "dependencies": {
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b && vite build && tsc -p tsconfig.build.json",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
@@ -24,6 +40,9 @@
     "@storybook/addon-onboarding": "^10.2.14",
     "@storybook/addon-vitest": "^10.2.14",
     "@storybook/react-vite": "^10.2.14",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -36,7 +55,11 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "eslint-plugin-storybook": "^10.2.14",
     "globals": "^16.5.0",
+    "jsdom": "^28.1.0",
     "playwright": "^1.58.2",
+    "prettier": "^3.8.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "storybook": "^10.2.14",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.48.0",
