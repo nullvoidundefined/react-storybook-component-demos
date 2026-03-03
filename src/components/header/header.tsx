@@ -52,19 +52,19 @@ export const Header = ({ id, user, onLogin, onLogout, onCreateAccount, ref }: He
             <span className={styles.welcome}>
               Welcome, <strong>{user.name}</strong>!
             </span>
-            <Button id="application-header-logout" size="small" onClick={onLogout}>
+            <Button id="application-header-logout" size="sm" onClick={onLogout}>
               Log out
             </Button>
           </>
         ) : (
           <>
-            <Button id="application-header-login" size="small" onClick={onLogin}>
+            <Button id="application-header-login" size="sm" onClick={onLogin}>
               Log in
             </Button>
             <Button
               id="application-header-signup"
               variant="primary"
-              size="small"
+              size="sm"
               onClick={onCreateAccount}
             >
               Sign up

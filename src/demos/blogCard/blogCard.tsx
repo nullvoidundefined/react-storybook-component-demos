@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import styles from './blogCard.module.scss';
-import { Text } from '../../components/text/text';
-import { Pill } from '../../components/pill/pill';
+import { Pill, Text } from '../../index';
 import type { BlogCardProps } from './blogCard.types';
 
 const formatDate = (iso: string) =>
@@ -22,10 +22,8 @@ export const BlogCard = ({
   readTime,
   className,
 }: BlogCardProps) => {
-  const containerClass = [styles.container, className].filter(Boolean).join(' ');
-
   return (
-    <article className={containerClass}>
+    <article className={clsx(styles.container, className)}>
       <img src={image} alt={imageAlt ?? title} className={styles.image} />
       <div className={styles.content}>
         <Text as="h3" variant="header3">

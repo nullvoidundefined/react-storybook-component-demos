@@ -30,15 +30,15 @@ describe('Button', () => {
 
   it('defaults to medium size', () => {
     render(<Button>Submit</Button>);
-    expect(screen.getByRole('button')).toHaveClass('acme-button--medium');
+    expect(screen.getByRole('button')).toHaveClass('acme-button--md');
   });
 
   it('applies the specified size class', () => {
-    const { rerender } = render(<Button size="small">Submit</Button>);
-    expect(screen.getByRole('button')).toHaveClass('acme-button--small');
+    const { rerender } = render(<Button size="sm">Submit</Button>);
+    expect(screen.getByRole('button')).toHaveClass('acme-button--sm');
 
-    rerender(<Button size="large">Submit</Button>);
-    expect(screen.getByRole('button')).toHaveClass('acme-button--large');
+    rerender(<Button size="lg">Submit</Button>);
+    expect(screen.getByRole('button')).toHaveClass('acme-button--lg');
   });
 
   it('is disabled when disabled prop is true', () => {

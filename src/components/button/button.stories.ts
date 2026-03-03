@@ -65,7 +65,7 @@ export const Danger: Story = {
 export const Large: Story = {
   args: {
     id: 'application-button-large',
-    size: 'large',
+    size: 'lg',
     children: 'Button',
   },
 };
@@ -73,7 +73,7 @@ export const Large: Story = {
 export const Small: Story = {
   args: {
     id: 'application-button-small',
-    size: 'small',
+    size: 'sm',
     children: 'Button',
   },
 };

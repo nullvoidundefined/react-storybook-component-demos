@@ -1,4 +1,5 @@
 import type React from 'react';
+import clsx from 'clsx';
 import styles from './pill.module.scss';
 import type { Size } from '../../types/dimensions';
 import type { Color } from '../../types/colors';
@@ -13,12 +14,8 @@ export interface PillProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 export const Pill = ({ size = 'md', variant, text, className, ...rest }: PillProps) => {
-  const classNames = [styles.pill, styles[size], styles[variant], className]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <span className={classNames} {...rest}>
+    <span className={clsx(styles.pill, styles[size], styles[variant], className)} {...rest}>
       {text}
     </span>
   );

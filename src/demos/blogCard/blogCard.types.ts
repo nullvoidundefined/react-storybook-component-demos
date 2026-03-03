@@ -8,11 +8,9 @@ export type Tag = {
 export type Blog = {
   author: string;
   category: string;
-  comments: number;
   date: string;
   description: string;
   image: string;
-  likes: number;
   readTime: string;
   tags: Tag[];
   title: string;

@@ -28,17 +28,17 @@
     color: var(--color-text-on-error);
   }
 
-  &.small {
+  &.sm {
     padding: 10px 16px;
     font-size: var(--font-size-button-sm);
   }
 
-  &.medium {
+  &.md {
     padding: 11px 20px;
     font-size: var(--font-size-button-md);
   }
 
-  &.large {
+  &.lg {
     padding: 12px 24px;
     font-size: var(--font-size-button-lg);
   }

@@ -4,11 +4,9 @@ import ImageSrc from './blog-card-image.webp';
 export const mockBlog: Blog = {
   author: 'John Doe',
   category: 'Technology',
-  comments: 10,
   date: '2026-03-03',
   description: 'Blog Description',
   image: ImageSrc,
-  likes: 100,
   readTime: '5 min read',
   tags: [
     {

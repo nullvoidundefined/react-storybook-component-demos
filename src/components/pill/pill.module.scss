@@ -10,11 +10,11 @@
   font-family: var(--font-family-brand);
   font-weight: var(--font-weight-medium);
   justify-content: center;
-  line-height: var(--line-height-body-tight);
+  line-height: var(--line-height-body-sm);
 
   &.sm {
     padding: 2px 8px;
-    font-size: var(--font-size-caption);
+    font-size: var(--font-size-label-xs);
   }
 
   &.md {
@@ -24,7 +24,7 @@
 
   &.lg {
     padding: 6px 12px;
-    font-size: var(--font-size-body-md);
+    font-size: var(--font-size-body);
   }
 
   @each $color in $fruit-colors {

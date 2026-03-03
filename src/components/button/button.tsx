@@ -1,5 +1,7 @@
 import type React from 'react';
+import clsx from 'clsx';
 import styles from './button.module.scss';
+import type { Size } from '../../types/dimensions';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Visual variant of the button */
@@ -7,7 +9,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /** What background color to use */
   backgroundColor?: string;
   /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
+  size?: Size;
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Unique id for the button element */
@@ -19,7 +21,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 /** Primary UI component for user interaction */
 export const Button = ({
   variant = 'secondary',
-  size = 'medium',
+  size = 'md',
   backgroundColor,
   children,
   disabled = false,
@@ -30,16 +32,12 @@ export const Button = ({
   style,
   ...props
 }: ButtonProps) => {
-  const classNames = [styles.button, styles[size], styles[variant], className]
-    .filter(Boolean)
-    .join(' ');
-
   return (
     <button
       ref={ref}
       id={id}
       type={type}
-      className={classNames}
+      className={clsx(styles.button, styles[size], styles[variant], className)}
       style={{ backgroundColor, ...style }}
       disabled={disabled}
       {...props}
