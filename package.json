@@ -67,6 +67,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
+    "@bottomlessmargaritas/claude-architecture-prompts": "^3.0.0",
     "clsx": "^2.1.1"
   }
 }
